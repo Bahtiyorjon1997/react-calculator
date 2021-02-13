@@ -3,39 +3,47 @@ import Button from "../Button/Button";
 import "./Calculator.css";
 
 function Calculator() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState("");
+
+  const Collector = (e) => {
+    setValue(value + e);
+  }
+
+  const evaluation = () => {
+    setValue(String(eval(value)));
+  }
+
+  const percent = () => {
+    setValue(String(parseInt(value) / 100));
+  }
+
+  const numbers = [[7, 8, 9, '*'], [4, 5, 6, '-'], [1, 2, 3, '+'], [{ text: '0', size: 2 }, '/', '=']];
+
   return (
-    <div className="box first-row">
-      <input type="text" value={value} />
-      <div className="row buts">
-        <Button number="AC" onClick={(e) => console.log(e)} />
-        <Button number="+" onClick={(e) => setValue("+")} />
-        <Button number="%" onClick={(e) => setValue("%")} />
-        <Button number="/" onClick={(e) => setValue()} />
+    <div className="box2">
+      <div className="row">
+        <div className="col-12 p-0 pb-3"><input type="text" value={value ? value : 0} className="monitor p-2" /></div>
       </div>
-      <div className="row buts">
-        <Button number="7" />
-        <Button number="8" />
-        <Button number="9" />
-        <Button number="x" />
+      <div className="row">
+        <div className="col-3"><Button className="btn" number="AC" onClick={(e) => setValue('')} /></div>
+        <div className="col-3"><Button className="btn" number="del" onClick={(e) => setValue(value.slice(0, -1))} /></div>
+        <div className="col-3"><Button className="btn" number="%" onClick={(e) => percent()} /></div>
+        <div className="col-3"><Button className="btn" number="/" onClick={(e) => Collector('/')} /></div>
       </div>
-      <div className="row buts">
-        <Button number="4" />
-        <Button number="5" />
-        <Button number="6" />
-        <Button number="-" />
-      </div>
-      <div className="row buts">
-        <Button number="1" />
-        <Button number="2" />
-        <Button number="3" />
-        <Button number="+" />
-      </div>
-      <div className="row buts">
-        <Button number="0" className="zero" />
-        <Button number="." />
-        <Button number="=" />
-      </div>
+      {numbers.map(row =>
+        <div className="row">
+          {
+            row.map(number =>
+              <div className={`col-${number?.size * 3 || 3} p-0`}>
+                <button onClick={() => {
+                  setValue(value + (number?.text || number))
+                }}>{number?.text || number}</button>
+              </div>)
+          }
+        </div>
+      )}
+
+
     </div>
   );
 }
