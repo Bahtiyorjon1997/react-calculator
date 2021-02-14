@@ -1,82 +1,79 @@
 div.box {
-    margin: 6rem auto;
-    box-shadow: 10px 10px 5px grey;
-    width: 22.7rem;
-    background: white;
-    background-color: black;
-    border-radius: 19px;
-    overflow: hidden;
+  margin: 6rem auto;
+  box-shadow: 10px 10px 5px grey;
+  width: 22.7rem;
+  background: white;
+  background-color: black;
+  border-radius: 19px;
+  overflow: hidden;
 }
 
 input {
-    width: 22.6rem;
-    height: 8rem;
-    font-size: 4rem;
-    text-align: right;
-    background-color: black;
-    color: rgb(174, 181, 226);
-    border-color: black;
+  width: 22.6rem;
+  height: 8rem;
+  font-size: 4rem;
+  text-align: right;
+  background-color: black;
+  color: rgb(174, 181, 226);
+  border-color: black;
 }
 
 input:focus {
-    outline-color: black;
+  outline-color: black;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .first-row {
-    background-color: white;
+  background-color: white;
 }
 
 .ex {
-    background-color: red;
+  background-color: red;
 }
 
 .zero {
-    width: 10.5rem;
+  width: 10.5rem;
 }
 
-
-/* .row {
-    padding-left: 1rem;
-} */
-
 .buts {
-    padding-left: 1rem;
+  padding-left: 1rem;
 }
 
 .btn {
-    color: chocolate;
+  color: rgb(30, 108, 210);
 }
 
 .btn:focus {
-    outline: none;
+  outline: none;
 }
 
 .btn:hover {
-    border-bottom-color: chocolate;
-    outline: none;
+  border-bottom-color: rgb(30, 153, 210);
+  outline: none;
+  color: aliceblue;
+  transition: 0.3s;
 }
 
 .last-btn {
-    margin-left: 0.2rem;
+  margin-left: 0.2rem;
 }
 
 .trap {
-    margin-left: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .flex-container {
-    justify-content: center;
+  justify-content: center;
 }
 
 .box2 {
-    max-width: 420px;
-    background-color: black;
-    border-radius: 20px;
-    padding: 20px;
+  max-width: 420px;
+  background-color: black;
+  border-radius: 20px;
+  padding: 20px;
 }
